@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>DOCTOR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ac.css' %}">
+    <style media="screen">
+    .tableimage
+    {
+      width: 70px;
+      height: 30px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="{% url 'home' %}" class="w3-bar-item w3-button"><b><img src="{% static 'images/circle-cropped.png' %}" height="40"> <font size="5"> MEDICARE</font></b> </a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="{% url 'home' %}" class="w3-bar-item w3-button">Home</a>
+         <a href="{% url 'patient' %}" class="w3-bar-item w3-button">PATIENT</a>
+             <a href="{% url 'doctor' %}"  class="w3-bar-item w3-button">DOCTOR</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+     <br/><br/><br/><br/>
+      <div class="row">
+        <div class="col-md-6"><h1>Doctor Details</h1> </div>
+        <div class="col-md-6"><a class="btn btn-primary" href="{% url 'addDoctor' %}" >Add Doctor</a> </div>
+        <div class="col-md-6"></div>
+      </div>
+    <table class="table table-striped table-hover table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Specialization</th>
+        <th>Location</th>
+        <th>Phone Num.</th>
+        <th>Mail Id</th>
+        <th>Patient List</th>
+      </tr>
+      {% for data in DD %}
+        <tr>
+          <td>{{data.name}}</td>
+          <td>{{data.specialization}}</td>
+          <td>{{data.location}}</td>
+          <td>{{data.phone}}</td>
+          <td>{{data.mail}}</td>
+          <td><a href="{% url 'doctorPatients' data.id %}"><img class="tableimage" src="{% static 'images/arrow.png' %}" alt=""></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+      </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+.form
+{
+	 margin: 0 auto;
+	 width: 500px;
+    font-family:monospace;
+
+}
+.form label {
+	 display: inline-block;
+	 text-align: right;
+	 float: left;
+}
+.form input
+{
+	 display: inline-block;
+	 text-align: left;
+	 float: right;
+}
+.form input  {
+	 background-color: #51dacf;
+	}
+	.submit{
+		background-color: #01c9fb;
+		color: white;
+		width: 500px;
+		height: 50px;
+		border: 0px;
+		cursor: pointer;
+
+	}
+	.submit:hover {
+    background-color: #00a7d1;
+}
+	.w3-display-middle {
+		background-color: #ed1250;
+	}
+	.radio{
+		cursor: pointer;
+		width: 30px;
+
+	}
+.fs
+{
+    font-size: 20px;
+
+}
+.mr
+{
+    margin-top: 75px;
+
+}
+.bg{
+    background-color: #f2f2f2
+}
+.mrr{
+    margin-top: 54px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1510px;
+
+  position: relative;
+  margin: 0 px;
+}
+
+
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

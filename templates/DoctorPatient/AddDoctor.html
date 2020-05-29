@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add Doctor</title>
+    <link rel="stylesheet" href="{% static 'css/ac.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="{% url 'home' %}" class="w3-bar-item w3-button"><b><img src="{% static 'images/circle-cropped.png' %}" height="40"> <font size="5"> MEDICARE</font></b> </a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+          <a href="{% url 'home' %}" class="w3-bar-item w3-button">Home</a>
+         <a href="{% url 'patient' %}" class="w3-bar-item w3-button">PATIENT</a>
+             <a href="{% url 'doctor' %}"  class="w3-bar-item w3-button">DOCTOR</a>
+        </div>
+      </div>
+    </div>
+
+
+         <br/><br/><br/><br/>
+           <div style="justify-content:center; display: flex; " >
+      <form action="{% url 'addDoctor' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+      </table>
+      <input style="width: 100%;" type="submit" name="" value="Submit">
+      </form>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<title>MEDICARE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ac.css' %}">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button"><b><img src="{% static 'images/circle-cropped.png' %}" height="40"> <font size="5"> MEDICARE</font></b> </a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">CENTER OF EXCELLENCE</a>
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+     <a href="{% url 'patient' %}" class="w3-bar-item w3-button">PATIENT</a>
+         <a href="{% url 'doctor' %}"  class="w3-bar-item w3-button">DOCTOR</a>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="mr">
+  <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+
+    <img src="{% static 'images/HOME.PNG' %}" height="650"  style="width:100%">
+
+  </div>
+
+  <div class="mySlides fade">
+
+    <img src="{% static 'images/HOME1.PNG' %}"  height="650" style="width:100%">
+
+  </div>
+
+  <div class="mySlides fade">
+
+    <img src="{% static 'images/home%202.PNG' %}" height="650" style="width:100%">
+
+  </div>
+        </div></div>
+<br>
+    <script>
+    var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2500); // Change image every 2 seconds
+}
+    </script>
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><font size="10">Center Of Excellence</font>
+</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Cancer Care</div>
+        <img src="{% static 'images/cancer-care.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Critical Care</div>
+        <img src="{% static 'images/critical-care.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Diabetic</div>
+        <img src="{% static 'images/diabetic.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Emergency</div>
+        <img src="{% static 'images/emergency.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Heart</div>
+        <img src="{% static 'images/heart.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Neurosciences</div>
+        <img src="{% static 'images/neurosciences.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Robotics</div>
+        <img src="{% static 'images/robotics.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Spine</div>
+        <img src="{% static 'images/spine.png' %}" alt="House" style="width:50%">
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><font size="10">About</font></h3>
+      <p><font size="4"><font-family:"monospace"><b>Online Doctor appointment is a smart web application, this provides a registration and login for both doctors and patients. Doctors can register by giving his necessary details like  fee, category, etc. After successful registration, the doctor can log in by giving username and password. The doctor can view the booking request by patients and if he accepts the patient requests the status will be shown as booking confirmed to the patient. He can also view the feedback given by the patient. The patients must be registered and log in to book a doctor basing the category and the type of problem patient is facing and the location. The search results will show the list of doctors matching patients required criteria and he can select one and send a request the request will be forwarded to admin and admin forward to doctor and if he is available he will send the confirmation request back to admin the admin update the booking request and says confirmed to the patient. the patient can view the status in the status tab and also he will get the mail saying the booking is Confirmed.</b></font-family:>
+
+        </font></p>
+  </div>
+<div class="w3-container w3-padding-32" id="about">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><font size="7">Our Specialist Doctors</font></h3>
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+
+      <h3>Dr.  Anoop.  P</h3>
+         <img  src="{% static 'images/male.png' %}"     alt="Architecture" width="250" height="150">
+      <p class="w3-opacity">Head of Cancer </p>
+
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+
+      <h3>Dr.  P. Harikrishnan</h3>
+         <img  src="{% static 'images/mawle.png' %}"     alt="Architecture" width="250" height="150">
+      <p class="w3-opacity">Head Of Cardiology</p>
+
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+
+      <h3>Dr.  Stump F</h3>
+         <img  src="{% static 'images/ano.pg..jpg' %}"     alt="Architecture" width="250" height="150">
+      <p class="w3-opacity">Head Of Oncology</p>
+
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+
+      <h3>Dr. Lakshmi Narasimhan</h3>
+         <img  src="{% static 'images/female.png' %}"    alt="Architecture" width="250" height="150">
+      <p class="w3-opacity">Head Of Neurology</p>
+
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><font size="10">       Contact Us</font></h3>
+    <p>Lets get in touch and talk about your problem</p>
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="button">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>
+
+<!-- Image of location/map -->
+<div class="w3-container">
+
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+    <p><b>DEVELOPED BY:</b> <br><a href="pj.jpg" target="_blank"><font size="3">Priyanshu Jain</font></a><br><a href="RAHUL%20CH.jpg" target="_blank"> <font size ="3">Rahul Chhablani</font></a><br><a href="rahul.jpg" target="_blank"><font size ="3">Rahul Kumar Agarwal</a></font></p>
+</footer>
+    </div>
+</body>
+</html>
